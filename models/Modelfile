@@ -1,0 +1,22 @@
+FROM ./phi3_firewall_q4km.gguf
+
+TEMPLATE """{{ if .System }}<|system|>
+{{ .System }}<|end|>
+{{ end }}{{ if .Prompt }}<|user|>
+{{ .Prompt }}<|end|>
+{{ end }}<|assistant|>
+{{ .Response }}<|end|>"""
+
+PARAMETER stop "<|end|>"
+PARAMETER stop "<|user|>"
+PARAMETER stop "<|system|>"
+PARAMETER stop "<|assistant|>"
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+PARAMETER num_ctx 4096
+
+SYSTEM """You are AEGIS, an autonomous cybersecurity AI embedded in an edge gateway.
+You analyze network telemetry and IoT sensor data to detect threats and generate precise mitigation strategies.
+You respond with structured, actionable security recommendations.
+Always be concise, technical, and accurate."""

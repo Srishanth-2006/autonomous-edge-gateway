@@ -1,0 +1,31 @@
+# ── Large Model Files (too large for GitHub) ──────────────────────────────────
+*.gguf
+models/phi3_firewall_q4km.gguf
+
+# ── Large Datasets ─────────────────────────────────────────────────────────────
+data/Friday-WorkingHours-*.csv
+
+# ── Secrets & Environment Variables ───────────────────────────────────────────
+.env
+
+# ── Python Environment ─────────────────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# ── OS Files ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE / Editor ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
